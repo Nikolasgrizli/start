@@ -1,0 +1,95 @@
+:root {
+    --p: 0;
+    --pt: 0;
+    --pr: 0;
+    --pb: 0;
+    --pl: 0;
+    --px: 0;
+    --py: 0;
+    --m: 0;
+    --mt: 0;
+    --mr: 0;
+    --mb: 0;
+    --ml: 0;
+    --mx: 0;
+    --my: 0;
+}
+
+@mixin infinite-spacing-utils($bp: '') {
+    [style*='--p#{$bp}:'] {
+        padding: calc(0.25rem * var(--p#{$bp})) !important;
+    }
+
+    [style*='--pt#{$bp}:'] {
+        padding-top: calc(0.25rem * var(--pt#{$bp})) !important;
+    }
+
+    [style*='--pr#{$bp}:'] {
+        padding-right: calc(0.25rem * var(--pr#{$bp})) !important;
+    }
+
+    [style*='--pb#{$bp}:'] {
+        padding-bottom: calc(0.25rem * var(--pb#{$bp})) !important;
+    }
+
+    [style*='--pl#{$bp}:'] {
+        padding-left: calc(0.25rem * var(--pl#{$bp})) !important;
+    }
+
+    [style*='--px#{$bp}:'] {
+        padding-right: calc(0.25rem * var(--px#{$bp})) !important;
+        padding-left: calc(0.25rem * var(--px#{$bp})) !important;
+    }
+
+    [style*='--py#{$bp}:'] {
+        padding-top: calc(0.25rem * var(--py#{$bp})) !important;
+        padding-bottom: calc(0.25rem * var(--py#{$bp})) !important;
+    }
+
+    [style*='--m#{$bp}:'] {
+        margin: calc(0.25rem * var(--m#{$bp})) !important;
+    }
+
+    [style*='--mt#{$bp}:'] {
+        margin-top: calc(0.25rem * var(--mt#{$bp})) !important;
+    }
+
+    [style*='--mr#{$bp}:'] {
+        margin-right: calc(0.25rem * var(--mr#{$bp})) !important;
+    }
+
+    [style*='--mb#{$bp}:'] {
+        margin-bottom: calc(0.25rem * var(--mb#{$bp})) !important;
+    }
+
+    [style*='--ml#{$bp}:'] {
+        margin-left: calc(0.25rem * var(--ml#{$bp})) !important;
+    }
+
+    [style*='--mx#{$bp}:'] {
+        margin-right: calc(0.25rem * var(--mx#{$bp})) !important;
+        margin-left: calc(0.25rem * var(--mx#{$bp})) !important;
+    }
+
+    [style*='--my#{$bp}:'] {
+        margin-top: calc(0.25rem * var(--my#{$bp})) !important;
+        margin-bottom: calc(0.25rem * var(--my#{$bp})) !important;
+    }
+}
+
+@include infinite-spacing-utils;
+
+@media (min-width: 544px) {
+    @include infinite-spacing-utils($bp: '_sm');
+}
+
+@media (min-width: 768px) {
+    @include infinite-spacing-utils($bp: '_md');
+}
+
+@media (min-width: 1024px) {
+    @include infinite-spacing-utils($bp: '_lg');
+}
+
+// examples
+// .some-class(style="--px:10;--px_sm:7;--px_md:4;--px_lg:1")
